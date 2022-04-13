@@ -1,13 +1,9 @@
 #db connect
 from time import sleep
 from selenium import webdriver
+from instapy import InstaPy
 
-browser = webdriver.Firefox()
-
-browser.get('https://www.instagram.com/')
-
-sleep(5)
-
-browser.close()
-
+session = InstaPy(username="<your_username>", password="<your_password>")
+session.login()
+session.like_by_tags(["bmw", "mercedes"], amount=5)
 #crud
